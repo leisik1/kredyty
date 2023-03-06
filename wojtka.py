@@ -3,11 +3,14 @@ import scipy
 import matplotlib.pyplot as plt
 import csv
 
+###
+### Zebranie danych, podstawowe definicje
+###
 
 def printsci(str):
     print("{:e}".format(str))
 
-with open(".\kredyty\credit_sample.csv") as fp:
+with open(".\credit_sample.csv") as fp:
     reader = csv.reader(fp, delimiter=",", quotechar='"')
     # next(reader, None)  # skip the headers
     data_read = []
@@ -18,11 +21,14 @@ with open(".\kredyty\credit_sample.csv") as fp:
 Vars = [i[2:-1] for i in data_read]
 Vars = [[float(lis[i]) for lis in Vars[1:] if not lis[i]=='NA'] for i in range(39)]
 
-###
-###
-###
+AssetsCritValue = np.percentile(Vars[0],98)
+print(AssetsCritValue)
+data_read = [i for i in data_read[1:] if float(i[2])<AssetsCritValue]
+print(data_read[0])
 
-print(max(Vars[0]))
+###
+### 
+###
 
 def reject_outliers(data, m = 2.):
     d = np.abs(data - np.median(data))
@@ -40,9 +46,4 @@ def showhistogram(var,nbins,rejectvalue):
     plt.show()
     plt.close(fig1)    
 
-varcent1 = [i for i in Vars[0] if i <6.768e11]
-showhistogram(Vars[4], 100, 2)
-printsci(np.percentile(Vars[0],98))
-
-print(Vars[0][:10])
-printsci()
+# showhistogram(Vars[4], 100, 2)
