@@ -1,0 +1,8 @@
+- Posortowanie danych wględenm firm "0" i firm "1"
+dict, list, ... dowolnie
+
+- In: funkcja W_i(dane 1 firmy) -> [0,1]
+- Out: 
+  a) lista wartości funkcji W_i dla każdej firmy, osobno zebrane dla firm "0" i "1"
+  b) Histogram tych dwóch rozkładów
+  c) Średnia, mediana, odchylenie standardowe dla tych dwóch rozkładów (opcjonalnie inne wsk. statystyczne)
