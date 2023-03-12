@@ -110,7 +110,7 @@ companies_nondef = {k:sorted(v,key=lambda l: l[0]) for (k,v) in companies_nondef
 
 def catch(val,i):
     try:
-        return flornone(val[i][3])/flornone(val[i][1])
+        return flornone(val[i][36])
     except:
         return None
 
@@ -126,6 +126,12 @@ print(len(vardictnondef))
 print(statistics.median(vardictdef))
 print(statistics.median(vardictnondef))
 
-# showhistogram(vardictdef,100,70,var2=vardictnondef,rv2=1.5)
+showhistogram(vardictdef,100,70,var2=vardictnondef,rv2=1.5)
+
+fig1, ax = plt.subplots()
+ax.plot([i for i in range(len(companies_def['96135545']))],[catch(companies_def['96135545'],i) for i in range(len(companies_def['96135545']))])
+plt.show()
+plt.close(fig1)
+
 
 # print(companies)
