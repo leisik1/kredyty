@@ -54,6 +54,10 @@ print(distrib_wyjebane_firmy_truncated)
 print(distrib_git_firmy)
 print(distrib_git_firmy_truncated)
 
+### Histogram / rozkład prawdopod.
+
+
+
 ### Wskaźnik rozbieżności Hirohito-Himmlera
 
 def KLD(data0,data1):
